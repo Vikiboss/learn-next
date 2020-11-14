@@ -7,14 +7,14 @@ import { getSortedPostsData } from "../lib/posts";
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
-  const { memo } = await (
-    await fetch("http://127.0.0.1:3000/api/hello")
-  ).json();
-  console.log(memo);
+  // const { memo } = await (
+  //   await fetch("http://127.0.0.1:3000/api/hello")
+  // ).json();
+  // console.log(memo);
   return {
     props: {
       allPostsData,
-      memo,
+      // memo,
     },
   };
 }
@@ -26,7 +26,7 @@ export default function Home({ allPostsData, memo }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>{memo || "努力上进且优秀"}</p>
+        <p>{"努力上进且优秀"}</p>
       </section>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
